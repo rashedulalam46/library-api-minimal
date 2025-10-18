@@ -1,0 +1,38 @@
+# Build folders
+bin/
+obj/
+out/
+publish/
+
+# Visual Studio files
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Rider IDE files
+.idea/
+
+# VS Code files
+.vscode/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# NuGet packages
+*.nupkg
+packages/
+*.snupkg
+
+# Dotnet Core temporary files
+*.pidb
+*.svclog
+*.pdb
+*.dll
+*.exe
+
+# User secrets
+secrets.json
+git add .gitignore
