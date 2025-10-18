@@ -16,3 +16,25 @@ Minimal API with .NET 9
 - Dropdown endpoints for UI forms: Authors, Categories, Publishers, Countries
 
 # 📂 Folder Structure
+```
+LibraryApiMinimal/
+├── Application/
+│   ├── DTOs/
+│   └── Interfaces/
+│       └── IDropdownRepository.cs
+├── Domain/
+│   └── Entities/
+├── Infrastructure/
+│   ├── Data/           # DbContext
+│   ├── Repositories/   # Repository implementations
+│   └── Services/       # Optional services
+├── Endpoint/          # Minimal API endpoints
+│   ├── BookEndpoint.cs
+│   ├── AuthorEndpoint.cs
+│   ├── CategoryEndpoint.cs
+│   ├── PublisherEndpoint.cs
+│   └── DropdownEndpoint.cs
+├── Program.cs
+└── appsettings.json
+```
+
