@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace LibraryApiMinimal.Endpoint;
 
-public static class AuthorEndpoints
+public static class AuthorEndpoint
 {
     public static void MapAuthorEndpoints(this WebApplication app)
     {

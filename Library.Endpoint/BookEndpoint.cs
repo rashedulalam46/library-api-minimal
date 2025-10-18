@@ -5,7 +5,7 @@ using Library.Domain.Entities;
 
 namespace LibraryApiMinimal.Endpoint;
 
-public static class BookEndpoints
+public static class BookEndpoint
 {
     public static void MapBookEndpoints(this WebApplication app)
     {

@@ -23,7 +23,7 @@ builder.Services.AddScoped<IBookRepository, BookRepository>();
 builder.Services.AddScoped<BookService>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<CategoryService>();
-builder.Services.AddScoped<IPublishersRepository, PublishersRepository>();
+builder.Services.AddScoped<IPublisherRepository, PublishersRepository>();
 builder.Services.AddScoped<PublishersService>();
 builder.Services.AddScoped<IDropdownRepository, DropdownRepository>();
 builder.Services.AddScoped<DropdownService>();
@@ -60,6 +60,8 @@ app.MapGet("/weatherforecast", () =>
 // Register endpoints
 app.MapAuthorEndpoints();
 app.MapBookEndpoints();
+app.MapCategoryEndpoints();
+app.MapPublisherEndpoints();
 
 app.Run();
 

@@ -5,9 +5,9 @@ namespace Library.Application.Services;
 
 public class PublishersService
 {
-    private readonly IPublishersRepository _repo;
+    private readonly IPublisherRepository _repo;
        private readonly Random _random = new Random();
-    public PublishersService(IPublishersRepository repo)
+    public PublishersService(IPublisherRepository repo)
     {
         _repo = repo;
     }
