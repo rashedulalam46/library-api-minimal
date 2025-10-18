@@ -3,6 +3,7 @@ using Library.Application.Services;
 using Library.Infrastructure.Data;
 using Library.Infrastructure.Repositories;
 using Library.Repositories;
+using LibraryApiMinimal.Endpoint;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -44,7 +45,7 @@ var summaries = new[]
 
 app.MapGet("/weatherforecast", () =>
 {
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
+    var forecast = Enumerable.Range(1, 5).Select(index =>
         new WeatherForecast
         (
             DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
@@ -55,6 +56,10 @@ app.MapGet("/weatherforecast", () =>
     return forecast;
 })
 .WithName("GetWeatherForecast");
+
+// Register endpoints
+app.MapAuthorEndpoints();
+app.MapBookEndpoints();
 
 app.Run();
 
