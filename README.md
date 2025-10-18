@@ -59,14 +59,16 @@ Configure the database in appsettings.json:
 ```
 
 #🚀 API Endpoints
-Books
+
+**Books:**
 
 - GET /api/books – Get all books
 - GET /api/books/{id} – Get book by ID
 - POST /api/books – Add new book
 - PUT /api/books/{id} – Update book
 - DELETE /api/books/{id} – Delete book
-Authors
+  
+**Authors**
 
 - GET /api/authors – Get all authors
 - GET /api/authors/{id} – Get author by ID
@@ -74,7 +76,7 @@ Authors
 - PUT /api/authors/{id} – Update author
 - DELETE /api/authors/{id} – Delete author
 
-Categories
+**Categories:**
 
 - GET /api/categories – Get all categories
 - GET /api/categories/{id} – Get category by ID
@@ -82,7 +84,7 @@ Categories
 - PUT /api/categories/{id} – Update category
 - DELETE /api/categories/{id} – Delete category
 
-Publishers
+**Publishers:**
 
 - GET /api/publishers – Get all publishers
 - GET /api/publishers/{id} – Get publisher by ID
@@ -90,9 +92,10 @@ Publishers
 - PUT /api/publishers/{id} – Update publisher
 - DELETE /api/publishers/{id} – Delete publisher
 
-Dropdowns
+**Dropdowns:**
 
 - GET /api/dropdown/countries – Get country list
 - GET /api/dropdown/authors – Get authors list
 - GET /api/dropdown/publishers – Get publishers list
 - GET /api/dropdown/categories – Get categories list
+
