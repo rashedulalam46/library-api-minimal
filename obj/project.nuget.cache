@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "MSJgQp0kI1o=",
+  "success": true,
+  "projectFilePath": "E:\\GitHub\\LibraryApiMinimal\\LibraryApiMinimal.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Rashed\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.9\\microsoft.aspnetcore.openapi.9.0.9.nupkg.sha512",
+    "C:\\Users\\Rashed\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}
