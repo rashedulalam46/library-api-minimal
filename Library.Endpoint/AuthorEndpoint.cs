@@ -11,7 +11,7 @@ public static class AuthorEndpoint
         var group = app.MapGroup("/api/authors")
                        .WithTags("Authors");
 
-        // ✅ GET all authors
+        // GET all authors
         group.MapGet("/", async (IAuthorRepository repo) =>
         {
             var authors = await repo.GetAllAsync();
@@ -21,7 +21,7 @@ public static class AuthorEndpoint
         .WithSummary("Get a list of all authors")
         .Produces<IEnumerable<Authors>>(StatusCodes.Status200OK);
 
-        // ✅ GET author by ID
+        // GET author by ID
         group.MapGet("/{id:int}", async (IAuthorRepository repo, int id) =>
         {
             var author = await repo.GetByIdAsync(id);
@@ -32,7 +32,7 @@ public static class AuthorEndpoint
         .Produces<Authors>(StatusCodes.Status200OK)
         .Produces(StatusCodes.Status404NotFound);
 
-        // ✅ POST (Add new author)
+        // POST (Add new author)
         group.MapPost("/", async (IAuthorRepository repo, Authors author) =>
         {
             var created = await repo.AddAsync(author);
@@ -42,7 +42,7 @@ public static class AuthorEndpoint
         .WithSummary("Add a new author")
         .Produces<Authors>(StatusCodes.Status201Created);
 
-        // ✅ PUT (Update existing author)
+        // PUT (Update existing author)
         group.MapPut("/{id:int}", async (IAuthorRepository repo, int id, Authors updatedAuthor) =>
         {
             if (id != updatedAuthor.author_id)
@@ -57,7 +57,7 @@ public static class AuthorEndpoint
         .Produces(StatusCodes.Status400BadRequest)
         .Produces(StatusCodes.Status404NotFound);
 
-        // ✅ DELETE (Remove an author)
+        // DELETE (Remove an author)
         group.MapDelete("/{id:int}", async (IAuthorRepository repo, int id) =>
         {
             var deleted = await repo.DeleteAsync(id);

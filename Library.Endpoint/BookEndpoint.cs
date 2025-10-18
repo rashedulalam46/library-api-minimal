@@ -12,7 +12,7 @@ public static class BookEndpoint
         var group = app.MapGroup("/api/books")
                        .WithTags("Books");
 
-        // ✅ GET all books
+        // GET all books
         group.MapGet("/", async (IBookRepository repo) =>
         {
             var books = await repo.GetAllAsync();
@@ -22,7 +22,7 @@ public static class BookEndpoint
         .WithSummary("Get a list of all books")
         .Produces<IEnumerable<BookReadDto>>(StatusCodes.Status200OK);
 
-        // ✅ GET book by ID
+        // GET book by ID
         group.MapGet("/{id:int}", async (IBookRepository repo, int id) =>
         {
             var book = await repo.GetByIdAsync(id);
@@ -33,7 +33,7 @@ public static class BookEndpoint
         .Produces<Books>(StatusCodes.Status200OK)
         .Produces(StatusCodes.Status404NotFound);
 
-        // ✅ POST (Add new book)
+        // POST (Add new book)
         group.MapPost("/", async (IBookRepository repo, Books book) =>
         {
             var created = await repo.AddAsync(book);
@@ -43,7 +43,7 @@ public static class BookEndpoint
         .WithSummary("Add a new book")
         .Produces<Books>(StatusCodes.Status201Created);
 
-        // ✅ PUT (Update existing book)
+        // PUT (Update existing book)
         group.MapPut("/{id:int}", async (IBookRepository repo, int id, Books updatedBook) =>
         {
             if (id != updatedBook.book_id)
@@ -58,7 +58,7 @@ public static class BookEndpoint
         .Produces(StatusCodes.Status404NotFound)
         .Produces(StatusCodes.Status400BadRequest);
 
-        // ✅ DELETE (Remove a book)
+        // DELETE (Remove a book)
         group.MapDelete("/{id:int}", async (IBookRepository repo, int id) =>
         {
             var deleted = await repo.DeleteAsync(id);

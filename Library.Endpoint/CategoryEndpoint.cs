@@ -11,7 +11,7 @@ public static class CategoryEndpoint
         var group = app.MapGroup("/api/categories")
                        .WithTags("Categories");
 
-        // ✅ GET all categories
+        // GET all categories
         group.MapGet("/", async (ICategoryRepository repo) =>
         {
             var categories = await repo.GetAllAsync();
@@ -21,7 +21,7 @@ public static class CategoryEndpoint
         .WithSummary("Get a list of all categories")
         .Produces<IEnumerable<Categories>>(StatusCodes.Status200OK);
 
-        // ✅ GET category by ID
+        // GET category by ID
         group.MapGet("/{id:int}", async (ICategoryRepository repo, int id) =>
         {
             var category = await repo.GetByIdAsync(id);
@@ -32,7 +32,7 @@ public static class CategoryEndpoint
         .Produces<Categories>(StatusCodes.Status200OK)
         .Produces(StatusCodes.Status404NotFound);
 
-        // ✅ POST (Add new category)
+        // POST (Add new category)
         group.MapPost("/", async (ICategoryRepository repo, Categories category) =>
         {
             var created = await repo.AddAsync(category);
@@ -42,7 +42,7 @@ public static class CategoryEndpoint
         .WithSummary("Add a new category")
         .Produces<Categories>(StatusCodes.Status201Created);
 
-        // ✅ PUT (Update existing category)
+        // PUT (Update existing category)
         group.MapPut("/{id:int}", async (ICategoryRepository repo, int id, Categories updatedCategory) =>
         {
             if (id != updatedCategory.category_id)
@@ -57,7 +57,7 @@ public static class CategoryEndpoint
         .Produces(StatusCodes.Status400BadRequest)
         .Produces(StatusCodes.Status404NotFound);
 
-        // ✅ DELETE (Remove a category)
+        // DELETE (Remove a category)
         group.MapDelete("/{id:int}", async (ICategoryRepository repo, int id) =>
         {
             var deleted = await repo.DeleteAsync(id);

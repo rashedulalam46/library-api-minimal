@@ -11,7 +11,7 @@ public static class DropdownEndpoint
         var group = app.MapGroup("/api/dropdown")
                        .WithTags("Dropdowns");
 
-        // ✅ GET: /api/dropdown/countries
+        // GET: /api/dropdown/countries
         group.MapGet("/countries", async (IDropdownRepository repo) =>
         {
             var countries = await repo.GetCountryDropdownAsync();
@@ -21,7 +21,7 @@ public static class DropdownEndpoint
         .WithSummary("Get list of countries for dropdown")
         .Produces<IEnumerable<DropdownItem>>(StatusCodes.Status200OK);
 
-        // ✅ GET: /api/dropdown/authors
+        // GET: /api/dropdown/authors
         group.MapGet("/authors", async (IDropdownRepository repo) =>
         {
             var authors = await repo.GetAuthorDropdownAsync();
@@ -31,7 +31,7 @@ public static class DropdownEndpoint
         .WithSummary("Get list of authors for dropdown")
         .Produces<IEnumerable<DropdownItem>>(StatusCodes.Status200OK);
 
-        // ✅ GET: /api/dropdown/publishers
+        // GET: /api/dropdown/publishers
         group.MapGet("/publishers", async (IDropdownRepository repo) =>
         {
             var publishers = await repo.GetPublisherDropdownAsync();
@@ -41,7 +41,7 @@ public static class DropdownEndpoint
         .WithSummary("Get list of publishers for dropdown")
         .Produces<IEnumerable<DropdownItem>>(StatusCodes.Status200OK);
 
-        // ✅ GET: /api/dropdown/categories
+        // GET: /api/dropdown/categories
         group.MapGet("/categories", async (IDropdownRepository repo) =>
         {
             var categories = await repo.GetCategoryDropdownAsync();

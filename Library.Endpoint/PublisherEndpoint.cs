@@ -10,7 +10,7 @@ public static class PublisherEndpoint
         var group = app.MapGroup("/api/publishers")
                        .WithTags("Publishers");
 
-        // ✅ GET all publishers
+        // GET all publishers
         group.MapGet("/", async (IPublisherRepository repo) =>
         {
             var publishers = await repo.GetAllAsync();
@@ -20,7 +20,7 @@ public static class PublisherEndpoint
         .WithSummary("Get a list of all publishers")
         .Produces<IEnumerable<Publishers>>(StatusCodes.Status200OK);
 
-        // ✅ GET publisher by ID
+        // GET publisher by ID
         group.MapGet("/{id:int}", async (IPublisherRepository repo, int id) =>
         {
             var publisher = await repo.GetByIdAsync(id);
@@ -31,7 +31,7 @@ public static class PublisherEndpoint
         .Produces<Publishers>(StatusCodes.Status200OK)
         .Produces(StatusCodes.Status404NotFound);
 
-        // ✅ POST (Add new publisher)
+        // POST (Add new publisher)
         group.MapPost("/", async (IPublisherRepository repo, Publishers publisher) =>
         {
             var created = await repo.AddAsync(publisher);
@@ -41,7 +41,7 @@ public static class PublisherEndpoint
         .WithSummary("Add a new publisher")
         .Produces<Publishers>(StatusCodes.Status201Created);
 
-        // ✅ PUT (Update existing publisher)
+        // PUT (Update existing publisher)
         group.MapPut("/{id:int}", async (IPublisherRepository repo, int id, Publishers updatedPublisher) =>
         {
             if (id != updatedPublisher.publisher_id)
@@ -56,7 +56,7 @@ public static class PublisherEndpoint
         .Produces(StatusCodes.Status400BadRequest)
         .Produces(StatusCodes.Status404NotFound);
 
-        // ✅ DELETE (Remove a publisher)
+        // DELETE (Remove a publisher)
         group.MapDelete("/{id:int}", async (IPublisherRepository repo, int id) =>
         {
             var deleted = await repo.DeleteAsync(id);
