@@ -1,6 +1,10 @@
-﻿# Library API Minimal
-A Minimal API project for managing a library system, built with .NET 9, SQL Server, and the Repository Pattern.
-This project provides CRUD operations for Books, Authors, Categories, Publishers, and Members, along with endpoints for dropdown lists to facilitate frontend selection.
+﻿# Library API (Minimal API)
+Library API is a Minimal API project for managing a library system, built with .NET 9, SQL Server, and the Repository Pattern. It provides CRUD operations for Books, Authors, Categories, and Publishers, along with dropdown endpoints to support frontend selection.
+
+Minimal APIs in .NET allow you to build lightweight, fast HTTP APIs without controllers or Startup classes. Introduced in .NET 6, they simplify the development of microservices, small apps, or prototypes while remaining production-ready.
+
+**Key Idea:**
+Instead of using the traditional MVC pattern, endpoints are defined directly in Program.cs (or via organized endpoint classes), using simple route mappings for clean and efficient API design.
 
 # 🛠️ Features
 
@@ -98,4 +102,5 @@ Configure the database in appsettings.json:
 - GET /api/dropdown/authors – Get authors list
 - GET /api/dropdown/publishers – Get publishers list
 - GET /api/dropdown/categories – Get categories list
+
 
