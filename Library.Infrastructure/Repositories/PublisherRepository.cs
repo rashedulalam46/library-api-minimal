@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Library.Infrastructure.Repositories;
 
-public class PublishersRepository : IPublisherRepository
+public class PublisherRepository : IPublisherRepository
 {
     private readonly LibraryDbContext _context;
 
-    public PublishersRepository(LibraryDbContext context)
+    public PublisherRepository(LibraryDbContext context)
     {
         _context = context;
     }
