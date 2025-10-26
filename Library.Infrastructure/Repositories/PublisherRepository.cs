@@ -10,7 +10,6 @@ namespace Library.Infrastructure.Repositories;
 public class PublisherRepository : IPublisherRepository
 {
     private readonly LibraryDbContext _context;
-
     public PublisherRepository(LibraryDbContext context)
     {
         _context = context;
