@@ -6,7 +6,7 @@ Minimal APIs in .NET allow you to build lightweight, fast HTTP APIs without cont
 **Key Idea:**
 Instead of using the traditional MVC pattern, endpoints are defined directly in Program.cs (or via organized endpoint classes), using simple route mappings for clean and efficient API design.
 
-# 🛠️ Features
+## 🛠️ Features
 
 Minimal API with .NET 9
 - CRUD operations for all main entities:
@@ -19,7 +19,7 @@ Minimal API with .NET 9
 - Swagger/OpenAPI documentation
 - Dropdown endpoints for UI forms: Authors, Categories, Publishers, Countries
 
-# 📂 Folder Structure
+## 📂 Folder Structure
 ```
 LibraryApiMinimal/
 ├── Application/
@@ -42,12 +42,12 @@ LibraryApiMinimal/
 └── appsettings.json
 ```
 
-# ⚙️ Requirements
+## ⚙️ Requirements
 - .NET 9 SDK
 - SQL Server (local or remote)
 - Visual Studio 2022 / Visual Studio Code
 
-# 🔧 Installation
+## 🔧 Installation
 
 Clone the repository:
 ```
@@ -62,7 +62,7 @@ Configure the database in appsettings.json:
 }
 ```
 
-#🚀 API Endpoints
+## 🚀 API Endpoints
 
 **Books:**
 
@@ -102,5 +102,6 @@ Configure the database in appsettings.json:
 - GET /api/dropdown/authors – Get authors list
 - GET /api/dropdown/publishers – Get publishers list
 - GET /api/dropdown/categories – Get categories list
+
 
 
