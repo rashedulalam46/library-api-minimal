@@ -49,7 +49,7 @@ LibraryApiMinimal/
 
 ## 🔧 Installation
 
-Clone the repository:
+**1. Clone the repository:**
 ```
 git clone https://github.com/rashedulalam46/library-api-minimal.git
 cd library-api-minimal
@@ -61,6 +61,17 @@ Configure the database in appsettings.json:
   "DefaultConnection": "Server=YOUR_SERVER;Database=LibraryDb;Trusted_Connection=True;"
 }
 ```
+
+**2. Apply migrations / create database**
+
+Run the SQL script located in **Library.Infrastructure/Data/DatabaseScript.sql** to create the database and tables.   
+Alternatively, to create the database and tables using Entity Framework, run the following command in the Infrastructure project (or from the solution root):
+
+```
+dotnet ef database update
+```
+
+This will create the database and necessary tables.
 
 ## 🚀 API Endpoints
 
@@ -102,6 +113,7 @@ Configure the database in appsettings.json:
 - GET /api/dropdown/authors – Get authors list
 - GET /api/dropdown/publishers – Get publishers list
 - GET /api/dropdown/categories – Get categories list
+
 
 
 
